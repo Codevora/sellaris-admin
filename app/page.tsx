@@ -56,27 +56,29 @@ const Home: React.FC = () => {
      />
      <div className="grid grid-cols-2 gap-4 w-[650px] justify-center h-full">
       <div className="p-3 flex flex-col justify-center gap-3 rounded-lg mt-2  border shadow-md">
-       <h1 className="text-lg font-semibold text-primary">Produk Keluar</h1>
+       <h1 className="text-lg font-semibold text-gray-500/60">Produk Keluar</h1>
        <div className="flex justify-start items-center ">
         <p className="text-3xl font-bold text-primary">300 Produk</p>
        </div>
       </div>
       <div className="p-3 flex flex-col  justify-center gap-3 rounded-lg mt-2  border shadow-md">
-       <h1 className="text-lg font-semibold text-primary">Transaksi Gagal</h1>
+       <h1 className="text-lg font-semibold text-gray-500/60">
+        Transaksi Gagal
+       </h1>
        <div className="flex justify-start items-center ">
-        <p className="text-3xl font-bold text-[red]">40 Produk</p>
+        <p className="text-3xl font-bold text-[#d04444]">40 Produk</p>
        </div>
       </div>
       <div className="p-3 flex flex-col  justify-center gap-3 rounded-lg mt-2  border shadow-md">
-       <h1 className="text-lg font-semibold text-primary">
+       <h1 className="text-lg font-semibold  text-gray-500/60">
         Total Pendapatan Harian
        </h1>
        <div className="flex justify-start items-center ">
-        <p className="text-3xl font-bold text-primary">IDR. 5,312,000,-</p>
+        <p className="text-3xl font-bold text-primary ">IDR. 5,312,000,-</p>
        </div>
       </div>
       <div className="p-3 flex flex-col  justify-center gap-3 rounded-lg mt-2 border shadow-md">
-       <h1 className="text-lg font-semibold text-primary">
+       <h1 className="text-lg font-semibold  text-gray-500/60">
         Total Pajak Harian
        </h1>
        <div className="flex justify-start items-center ">
@@ -88,10 +90,46 @@ const Home: React.FC = () => {
       <div className="border-b p-4">
        <h1 className="text-2xl font-bold text-gray-500/60">Informasi Stok</h1>
       </div>
-      <div className="p-4 flex justify-between"><p>1. <span>lorem ipsum</span></p><p>128</p></div>
+      <div className="p-3 flex justify-between border-b font-medium text-gray-500/60">
+       <p className="text-primary">
+        1. <span>Barang A</span>
+       </p>
+       <p>0</p>
+      </div>
+      <div className="p-3 flex justify-between border-b font-medium text-gray-500/60">
+       <p className="text-primary">
+        2. <span>Barang B</span>
+       </p>
+       <p>0</p>
+      </div>
+      <div className="p-3 flex justify-between border-b font-medium text-gray-500/60">
+       <p className="text-primary">
+        3. <span>Barang C</span>
+       </p>
+       <p>0</p>
+      </div>
+      <div className="p-3 flex justify-between border-b font-medium text-gray-500/60">
+       <p className="text-primary">
+        4. <span>Barang D</span>
+       </p>
+       <p>0</p>
+      </div>
+      <div className="p-3 flex justify-between border-b font-medium text-gray-500/60">
+       <p className="text-primary">
+        5. <span>Barang E</span>
+       </p>
+       <p>0</p>
+      </div>
+      <div className="p-3 flex justify-between border-b font-medium text-gray-500/60">
+       <p className="text-primary">
+        6. <span>Barang F</span>
+       </p>
+       <p>0</p>
+      </div>
      </div>
     </div>
    </div>
+   <h1 className="text-center">Copyright@2024. Codevora Tech</h1>
   </div>
  );
 };
