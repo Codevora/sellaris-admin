@@ -1,5 +1,9 @@
 "use client";
 
+import {FaGear} from "react-icons/fa6";
+import {FaCaretDown} from "react-icons/fa";
+import {IoLogOut} from "react-icons/io5";
+
 import React, {useState} from "react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
@@ -10,54 +14,6 @@ const Dashboard = {
    name: "Dashboard",
    path: "/",
   },
-  //{
-  // name: "Stok Barang",
-  // path: "/stok-barang",
-  // },
-  //{
-  //name: "Pajak",
-  // path: "/pajak",
-  //},
-  //{
-  // name: "Cabang",
-  // path: "/cabang",
-  //},
-  // {
-  // name: "Laporan Keuangan",
-  //path: "/laporan-keuangan",
-  //},
-  //{
-  // name: "Harga & Promosi",
-  // path: "/harga-promosi",
-  //},
-  //{
-  // name: "Tiket Pengaduan",
-  // path: "/ticket",
-  //},
-  // {
-  //  name: "FAQ & Panduan",
-  //  path: "/faq",
-  // },
-  // {
-  //  name: "Kontak Admin",
-  //  path: "/kontak-admin",
-  // },
-  // {
-  //  name: "Sistem Pembayaran",
-  //  path: "/sistem-pembayaran",
-  // },
-  // {
-  //  name: "Loyalty Program",
-  //  path: "/loyalty-program",
-  // },
-  // {
-  //  name: "Ulasan Pelanggan",
-  //  path: "/ulasan-pelanggan",
-  // },
-  // {
-  // name: "Struk Digital",
-  //  path: "/struk-digital",
-  // },
  ],
 };
 
@@ -65,15 +21,15 @@ const Report = {
  name: "Sales",
  items: [
   {
-   name: "Harian",
+   name: "Daily",
    path: "/daily",
   },
   {
-   name: "Mingguan",
+   name: "Weekly",
    path: "/weekly",
   },
   {
-   name: "Bulanan",
+   name: "Monthly",
    path: "/monthly",
   },
  ],
@@ -83,34 +39,110 @@ const Money = {
  name: "Financial",
  items: [
   {
-   name: "Analisis Omset",
+   name: "Revenue Analysis",
    path: "/analytics",
   },
   {
-   name: "Kinerja Karyawan",
+   name: "Employee Analysis",
    path: "/weekly",
   },
   {
-   name: "Bulanan",
+   name: "Taxes",
    path: "/monthly",
   },
  ],
 };
 
 const Product = {
- name: "Product",
+ name: "Library",
  items: [
   {
-   name: "Harga & Promosi",
+   name: "Product",
    path: "/daily",
   },
   {
-   name: "Kinerja Karyawan",
+   name: "Bundle Package",
    path: "/weekly",
   },
   {
-   name: "Bulanan",
-   path: "/monthly",
+   name: "Promo",
+   path: "/promo",
+  },
+  {
+   name: "Discount",
+   path: "/discount",
+  },
+  {
+   name: "Sales Type",
+   path: "/sales-type",
+  },
+ ],
+};
+
+const Inventory = {
+ name: "Inventory",
+ items: [
+  {
+   name: "Ingredient Library",
+   path: "/daily",
+  },
+  {
+   name: "Ingredient Categories",
+   path: "/weekly",
+  },
+  {
+   name: "Recipes",
+   path: "/promo",
+  },
+  {
+   name: "Suppliers",
+   path: "/discount",
+  },
+  {
+   name: "Sales Type",
+   path: "/sales-type",
+  },
+ ],
+};
+
+const Employee = {
+ name: "Employee",
+ items: [
+  {
+   name: "Employee Access",
+   path: "/daily",
+  },
+  {
+   name: "PIN Access",
+   path: "/weekly",
+  },
+ ],
+};
+
+const TableManagement = {
+ name: "Table Management",
+ items: [
+  {
+   name: "Employee Access",
+   path: "/daily",
+  },
+  {
+   name: "PIN Access",
+   path: "/weekly",
+  },
+ ],
+};
+
+const PaymentMethod = {
+ name: "Payment Method",
+ items: [
+  {
+   name: "QRIS",
+   path: "/daily",
+  },
+  {
+   name: "PIN Access",
+   path: "/weekly",
   },
  ],
 };
@@ -124,81 +156,238 @@ const Sidebar: React.FC = () => {
  };
 
  return (
-  <div className="h-full w-[300px] bg-white border-r text-primary p-4">
-   <div className="py-4 px-2">
-    <img
-     src="Logos/1.png"
-     alt=""
-     className="w-40"
-    />
-   </div>
-   <div className="flex flex-col gap-1">
-    {Dashboard.items.map((item, index) => (
+  <div className="fixed flex flex-col justify-between h-full w-[270px] bg-white border-r text-primary shadow-md">
+   <div>
+    <div className="py-4 px-4 bg-primary flex justify-center border-b border-secondary">
+     <img
+      src="Logos/1.png"
+      alt=""
+      className="w-[180px]"
+     />
+    </div>
+
+    {/* Profile */}
+    <div
+     onClick={() => toggleDropdown("profile")}
+     className="flex gap-3 p-4 items-center cursor-pointer justify-between bg-primary">
+     <div className="flex gap-3 items-center">
+      <button className="flex items-center focus:outline-none border rounded-full bg-white p-4"></button>
+      <h1 className="text-white font-semibold">John Doe</h1>
+      {activeDropdown === "profile" && (
+       <div className="absolute mt-[155px] w-[230px] border border-primary text-black bg-white shadow-lg rounded-md">
+        <ul>
+         <li className="p-2 flex justify-between items-center hover:bg-gray-200 cursor-pointer  rounded-t-md border-primary border-b">
+          Settings <FaGear className="fill-primary" />
+         </li>
+         <li className="p-2 flex justify-between items-center hover:bg-gray-200 cursor-pointer rounded-b-md border-primary">
+          Logout <IoLogOut className="fill-primary" />
+         </li>
+        </ul>
+       </div>
+      )}
+     </div>
+     <FaCaretDown className="fill-white" />
+    </div>
+
+    {/*item*/}
+    <div>
+     <div className="flex flex-col gap-1">
+      <ul className="hover:bg-primary hover:text-white py-3 px-4 font-medium">
+       <Link href="/">
+        <li>Dashboard</li>
+       </Link>
+      </ul>
+     </div>
+
      <ul
-      key={index}
-      className="hover:bg-primary hover:text-white p-3">
-      <Link href={item.path}>
-       <li>{item.name}</li>
+      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      onClick={() => toggleDropdown("item1")}>
+      <div className="flex justify-between items-center">
+       {Report.name}
+       <FaCaretDown className="fill-primary" />
+      </div>
+     </ul>
+     {activeDropdown === "item1" && (
+      <ul className="bg-[#f4f4f4] text-primary border-t border-b">
+       {Report.items.map((item, index) => (
+        <ul key={index}>
+         <Link href={item.path}>
+          <li
+           className={`${
+            pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
+           } p-3 px-6 cursor-pointer`}>
+           {item.name}
+          </li>
+         </Link>
+        </ul>
+       ))}
+      </ul>
+     )}
+
+     <ul
+      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      onClick={() => toggleDropdown("item2")}>
+      <div className="flex justify-between items-center">
+       {Money.name}
+       <FaCaretDown className="fill-primary" />
+      </div>
+     </ul>
+     {activeDropdown === "item2" && (
+      <ul className="bg-[#f4f4f4] text-primary border-t border-b">
+       {Money.items.map((item, index) => (
+        <ul key={index}>
+         <Link href={item.path}>
+          <li
+           className={`${
+            pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
+           } p-3 px-6 cursor-pointer`}>
+           {item.name}
+          </li>
+         </Link>
+        </ul>
+       ))}
+      </ul>
+     )}
+
+     <ul
+      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      onClick={() => toggleDropdown("item3")}>
+      <div className="flex justify-between items-center">
+       {Product.name}
+       <FaCaretDown className="fill-primary" />
+      </div>
+     </ul>
+     {activeDropdown === "item3" && (
+      <ul className="bg-[#f4f4f4] text-primary border-t border-b">
+       {Product.items.map((item, index) => (
+        <ul key={index}>
+         <Link href={item.path}>
+          <li
+           className={`${
+            pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
+           } p-3 px-6 cursor-pointer`}>
+           {item.name}
+          </li>
+         </Link>
+        </ul>
+       ))}
+      </ul>
+     )}
+
+     <ul
+      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      onClick={() => toggleDropdown("item4")}>
+      <div className="flex justify-between items-center">
+       {Inventory.name}
+       <FaCaretDown className="fill-primary" />
+      </div>
+     </ul>
+     {activeDropdown === "item4" && (
+      <ul className="bg-[#f4f4f4] text-primary border-t border-b">
+       {Inventory.items.map((item, index) => (
+        <ul key={index}>
+         <Link href={item.path}>
+          <li
+           className={`${
+            pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
+           } p-3 px-6 cursor-pointer`}>
+           {item.name}
+          </li>
+         </Link>
+        </ul>
+       ))}
+      </ul>
+     )}
+
+     <ul
+      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      onClick={() => toggleDropdown("item5")}>
+      <div className="flex justify-between items-center">
+       {Employee.name}
+       <FaCaretDown className="fill-primary" />
+      </div>
+     </ul>
+     {activeDropdown === "item5" && (
+      <ul className="bg-[#f4f4f4] text-primary border-t border-b">
+       {Employee.items.map((item, index) => (
+        <ul key={index}>
+         <Link href={item.path}>
+          <li
+           className={`${
+            pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
+           } p-3 px-6 cursor-pointer`}>
+           {item.name}
+          </li>
+         </Link>
+        </ul>
+       ))}
+      </ul>
+     )}
+
+     <ul
+      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      onClick={() => toggleDropdown("item6")}>
+      <div className="flex justify-between items-center">
+       {TableManagement.name}
+       <FaCaretDown className="fill-primary" />
+      </div>
+     </ul>
+     {activeDropdown === "item6" && (
+      <ul className="bg-[#f4f4f4] text-primary border-t border-b">
+       {TableManagement.items.map((item, index) => (
+        <ul key={index}>
+         <Link href={item.path}>
+          <li
+           className={`${
+            pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
+           } p-3 px-6 cursor-pointer`}>
+           {item.name}
+          </li>
+         </Link>
+        </ul>
+       ))}
+      </ul>
+     )}
+
+     <ul
+      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      onClick={() => toggleDropdown("item7")}>
+      <div className="flex justify-between items-center">
+       {PaymentMethod.name}
+       <FaCaretDown className="fill-primary" />
+      </div>
+     </ul>
+     {activeDropdown === "item7" && (
+      <ul className="bg-[#f4f4f4] text-primary border-t border-b">
+       {PaymentMethod.items.map((item, index) => (
+        <ul key={index}>
+         <Link href={item.path}>
+          <li
+           className={`${
+            pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
+           } p-3 px-6 cursor-pointer`}>
+           {item.name}
+          </li>
+         </Link>
+        </ul>
+       ))}
+      </ul>
+     )}
+    </div>
+    <div className="flex flex-col gap-1">
+     <ul className="hover:bg-primary hover:text-white py-3 px-4 font-medium">
+      <Link href="/">
+       <li>Tutorials</li>
       </Link>
      </ul>
-    ))}
+    </div>
    </div>
 
-   <ul
-    className="hover:bg-primary hover:text-white p-3"
-    onClick={() => toggleDropdown("item1")}>
-    {Report.name}
-   </ul>
-   {activeDropdown === "item1" && (
-    <ul className="bg-secondary text-white">
-     {Report.items.map((item, index) => (
-      <ul key={index}>
-       <Link href={item.path}>
-        <li className="p-4 hover:bg-gray-600 cursor-pointer"> {item.name}</li>
-       </Link>
-      </ul>
-     ))}
-    </ul>
-   )}
-
-   <ul
-    className="hover:bg-primary hover:text-white p-3"
-    onClick={() => toggleDropdown("item2")}>
-    {Money.name}
-   </ul>
-   {activeDropdown === "item2" && (
-    <ul className="bg-secondary text-white">
-     {Money.items.map((item, index) => (
-      <ul key={index}>
-       <Link href={item.path}>
-        <li className="p-4 hover:bg-gray-600 cursor-pointer"> {item.name}</li>
-       </Link>
-      </ul>
-     ))}
-    </ul>
-   )}
-
-   <ul
-    className="hover:bg-primary hover:text-white p-3"
-    onClick={() => toggleDropdown("item3")}>
-    {Product.name}
-   </ul>
-   {activeDropdown === "item3" && (
-    <ul className="bg-secondary text-white">
-     {Product.items.map((item, index) => (
-      <ul key={index}>
-       <Link href={item.path}>
-        <li
-         className={`${
-          pathname === item.path ? "p-4 bg-gray-600 " : "p-4 hover:bg-gray-600"
-         }  cursor-pointer`}>
-         {item.name}
-        </li>
-       </Link>
-      </ul>
-     ))}
-    </ul>
-   )}
+   {/* Sidebar Footer */}
+   <div className="bg-primary flex flex-col gap-2 items-center justify-center p-4">
+    <h1 className="text-white">FAQ & Support</h1>
+    <button className="bg-white text-primary p-2 rounded-md">Contact Us</button>
+   </div>
   </div>
  );
 };
