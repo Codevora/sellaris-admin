@@ -1,29 +1,15 @@
 "use client";
 
 import React, {useState} from "react";
-import {FaAngleDown} from "react-icons/fa6";
 import Link from "next/link";
-
-const Report = {
- name: "Laporan Penjualan",
- items: [
-  {
-   name: "Harian",
-   path: "/daily",
-  },
-  {
-   name: "Mingguan",
-   path: "/weekly",
-  },
-  {
-   name: "Bulanan",
-   path: "/monthly",
-  },
- ],
-};
+import { usePathname } from "next/navigation";
 
 const SidebarItem = {
  items: [
+  {
+   name: "Laporan Penjualan",
+   path: "/",
+  },
   {
    name: "Analisis Omset",
    path: "/analytics",
@@ -84,47 +70,28 @@ const SidebarItem = {
 };
 
 const Sidebar: React.FC = () => {
- const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const pathname = usePathname();
 
- const toggleDropdown = (dropdown: string) => {
-  setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
- };
 
  return (
-  <div className="h-full w-64 bg-secondary text-white">
+  <div className="h-full w-64 bg-secondary text-white p-4">
    <div className="py-4 px-2">
-    <Link href="/">
-     <h1 className="text-xl font-bold">Admin Dashboard</h1>
-    </Link>
+    <h1 className="text-xl font-bold">Admin Dashboard</h1>
    </div>
-   <ul className="mt-4 ">
-    <li
-     className="p-3 hover:bg-gray-600 cursor-pointer flex items-center justify-between"
-     onClick={() => toggleDropdown("item1")}>
-     {Report.name}
-     <FaAngleDown />
-    </li>
-    {activeDropdown === "item1" && (
-     <ul className="bg-third">
-      {Report.items.map((item, index) => (
-       <ul key={index}>
-        <Link href={item.path}>
-         <li className="p-3 hover:bg-gray-600 cursor-pointer"> {item.name}</li>
-        </Link>
-       </ul>
-      ))}
+   <ul className="cursor-pointer  flex flex-col gap-2">
+    {SidebarItem.items.map((item, index) => (
+     <ul
+      key={index}
+      className={`${
+       pathname === item.path
+        ? "bg-white text-primary p-3 rounded-lg"
+        : "hover:bg-white hover:text-primary p-3 rounded-lg"
+      }`}>
+      <Link href={item.path}>
+       <li>{item.name}</li>
+      </Link>
      </ul>
-    )}
-
-    <ul className="cursor-pointer">
-     {SidebarItem.items.map((item, index) => (
-      <ul key={index}>
-       <Link href={item.path}>
-        <li className="p-3 hover:bg-gray-600">{item.name}</li>
-       </Link>
-      </ul>
-     ))}
-    </ul>
+    ))}
    </ul>
   </div>
  );
