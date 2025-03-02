@@ -16,11 +16,9 @@ export default function RootLayout({
 }>) {
  return (
   <html lang="en">
-   <body>
-    <div className="flex h-screen bg-[#f4f4f4]">
-     <Sidebar />
-     {children}
-    </div>
+   <body className="flex  bg-[#f4f4f4]">
+    <Sidebar />
+    {children}
    </body>
   </html>
  );

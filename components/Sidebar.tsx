@@ -4,32 +4,28 @@ import {FaGear} from "react-icons/fa6";
 import {FaCaretDown} from "react-icons/fa";
 import {IoLogOut} from "react-icons/io5";
 
-import React, {useState} from "react";
+import {useState} from "react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 
-const Dashboard = {
- items: [
-  {
-   name: "Dashboard",
-   path: "/",
-  },
- ],
-};
 
 const Report = {
- name: "Sales",
+ name: "Reports",
  items: [
   {
-   name: "Daily",
+   name: "Sales",
    path: "/daily",
   },
   {
-   name: "Weekly",
+   name: "Transaction",
    path: "/weekly",
   },
   {
-   name: "Monthly",
+   name: "Invoices",
+   path: "/monthly",
+  },
+  {
+   name: "Shift",
    path: "/monthly",
   },
  ],
@@ -123,12 +119,16 @@ const TableManagement = {
  name: "Table Management",
  items: [
   {
-   name: "Employee Access",
+   name: "Table Group",
    path: "/daily",
   },
   {
-   name: "PIN Access",
+   name: "Table Map",
    path: "/weekly",
+  },
+  {
+   name: "Table Report",
+   path: "/daily",
   },
  ],
 };
@@ -141,7 +141,7 @@ const PaymentMethod = {
    path: "/daily",
   },
   {
-   name: "PIN Access",
+   name: "Payment Configuration",
    path: "/weekly",
   },
  ],

@@ -3,7 +3,7 @@ import ProductSalesChart from "../components/FinancialChart";
 
 const Home: React.FC = () => {
  return (
-  <div className="ml-[300px] py-4 flex flex-col gap-1 min-h-screen w-screen bg-[#f4f4f4]">
+  <div className="ml-[270px] py-4 flex flex-col gap-1 min-h-screen w-screen bg-[#f4f4f4]">
    <h1 className="px-4 text-3xl font-bold text-primary">Dashboard</h1>
    <div className="grid grid-cols-3">
     <div className=" p-4 rounded-lg w-full">
