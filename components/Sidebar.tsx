@@ -3,6 +3,7 @@
 import {FaGear} from "react-icons/fa6";
 import {FaCaretDown} from "react-icons/fa";
 import {IoLogOut} from "react-icons/io5";
+import {FaStore} from "react-icons/fa";
 
 import {useState} from "react";
 import Link from "next/link";
@@ -10,11 +11,11 @@ import {usePathname} from "next/navigation";
 
 
 const Report = {
- name: "Reports",
+ name: "REPORTS",
  items: [
   {
    name: "Sales",
-   path: "/daily",
+   path: "/reports/sales",
   },
   {
    name: "Transaction",
@@ -32,7 +33,7 @@ const Report = {
 };
 
 const Money = {
- name: "Financial",
+ name: "FINANCIAL",
  items: [
   {
    name: "Revenue Analysis",
@@ -50,7 +51,7 @@ const Money = {
 };
 
 const Product = {
- name: "Library",
+ name: "LIBRARY",
  items: [
   {
    name: "Product",
@@ -76,7 +77,7 @@ const Product = {
 };
 
 const Inventory = {
- name: "Inventory",
+ name: "INVENTORY",
  items: [
   {
    name: "Ingredient Library",
@@ -102,7 +103,7 @@ const Inventory = {
 };
 
 const Employee = {
- name: "Employee",
+ name: "EMPLOYEE",
  items: [
   {
    name: "Employee Access",
@@ -116,7 +117,7 @@ const Employee = {
 };
 
 const TableManagement = {
- name: "Table Management",
+ name: "TABLE MANAGEMENT",
  items: [
   {
    name: "Table Group",
@@ -134,7 +135,7 @@ const TableManagement = {
 };
 
 const PaymentMethod = {
- name: "Payment Method",
+ name: "PAYMENT METHOD",
  items: [
   {
    name: "QRIS",
@@ -156,25 +157,25 @@ const Sidebar: React.FC = () => {
  };
 
  return (
-  <div className="fixed flex flex-col justify-between h-full w-[270px] bg-white border-r text-primary shadow-md">
-   <div>
+  <div className="fixed flex flex-col justify-between h-screen lg:w-[240px] 2xl:w-[270px] bg-white border-r text-primary shadow-md">
+   <div className="">
     <div className="py-4 px-4 bg-primary flex justify-center border-b border-secondary">
      <img
       src="Logos/1.png"
       alt=""
-      className="w-[180px]"
+      className="lg:w-[130px] 2xl:w-[180px]"
      />
     </div>
 
     {/* Profile */}
     <div
      onClick={() => toggleDropdown("profile")}
-     className="flex gap-3 p-4 items-center cursor-pointer justify-between bg-primary">
+     className="flex gap-3 lg:p-2 2xl:p-4 items-center cursor-pointer justify-between bg-primary">
      <div className="flex gap-3 items-center">
       <button className="flex items-center focus:outline-none border rounded-full bg-white p-4"></button>
       <h1 className="text-white font-semibold">John Doe</h1>
       {activeDropdown === "profile" && (
-       <div className="absolute mt-[155px] w-[230px] border border-primary text-black bg-white shadow-lg rounded-md">
+       <div className="absolute left-0 lg:ml-1 2xl:ml-0 mt-[155px] w-[230px] border border-primary text-black bg-white shadow-lg rounded-md">
         <ul>
          <li className="p-2 flex justify-between items-center hover:bg-gray-200 cursor-pointer  rounded-t-md border-primary border-b">
           Settings <FaGear className="fill-primary" />
@@ -190,19 +191,19 @@ const Sidebar: React.FC = () => {
     </div>
 
     {/*item*/}
-    <div>
+    <div className="overflow-y-auto h-screen">
      <div className="flex flex-col gap-1">
-      <ul className="hover:bg-primary hover:text-white py-3 px-4 font-medium">
+      <ul className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium">
        <Link href="/">
-        <li>Dashboard</li>
+        <li className="text-[14px]">DASHBOARD</li>
        </Link>
       </ul>
      </div>
 
      <ul
-      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium"
       onClick={() => toggleDropdown("item1")}>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between text-[14px] items-center">
        {Report.name}
        <FaCaretDown className="fill-primary" />
       </div>
@@ -215,7 +216,7 @@ const Sidebar: React.FC = () => {
           <li
            className={`${
             pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
-           } p-3 px-6 cursor-pointer`}>
+           } lg:p-2 lg:px-5 2xl:p-3  2xl:px-6 cursor-pointer`}>
            {item.name}
           </li>
          </Link>
@@ -225,7 +226,7 @@ const Sidebar: React.FC = () => {
      )}
 
      <ul
-      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium"
       onClick={() => toggleDropdown("item2")}>
       <div className="flex justify-between items-center">
        {Money.name}
@@ -240,7 +241,7 @@ const Sidebar: React.FC = () => {
           <li
            className={`${
             pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
-           } p-3 px-6 cursor-pointer`}>
+           } lg:p-2 lg:px-5 2xl:p-3 2xl:px-6 cursor-pointer`}>
            {item.name}
           </li>
          </Link>
@@ -250,7 +251,7 @@ const Sidebar: React.FC = () => {
      )}
 
      <ul
-      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium"
       onClick={() => toggleDropdown("item3")}>
       <div className="flex justify-between items-center">
        {Product.name}
@@ -265,7 +266,7 @@ const Sidebar: React.FC = () => {
           <li
            className={`${
             pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
-           } p-3 px-6 cursor-pointer`}>
+           } lg:p-2 lg:px-5 2xl:p-3 2xl:px-6 cursor-pointer`}>
            {item.name}
           </li>
          </Link>
@@ -275,7 +276,7 @@ const Sidebar: React.FC = () => {
      )}
 
      <ul
-      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium"
       onClick={() => toggleDropdown("item4")}>
       <div className="flex justify-between items-center">
        {Inventory.name}
@@ -290,7 +291,7 @@ const Sidebar: React.FC = () => {
           <li
            className={`${
             pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
-           } p-3 px-6 cursor-pointer`}>
+           } lg:p-2 lg:px-5 2xl:p-3 2xl:px-6 cursor-pointer`}>
            {item.name}
           </li>
          </Link>
@@ -300,7 +301,7 @@ const Sidebar: React.FC = () => {
      )}
 
      <ul
-      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium"
       onClick={() => toggleDropdown("item5")}>
       <div className="flex justify-between items-center">
        {Employee.name}
@@ -315,7 +316,7 @@ const Sidebar: React.FC = () => {
           <li
            className={`${
             pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
-           } p-3 px-6 cursor-pointer`}>
+           } lg:p-2 lg:px-5 2xl:p-3 2xl:px-6 cursor-pointer`}>
            {item.name}
           </li>
          </Link>
@@ -325,7 +326,7 @@ const Sidebar: React.FC = () => {
      )}
 
      <ul
-      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium"
       onClick={() => toggleDropdown("item6")}>
       <div className="flex justify-between items-center">
        {TableManagement.name}
@@ -340,7 +341,7 @@ const Sidebar: React.FC = () => {
           <li
            className={`${
             pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
-           } p-3 px-6 cursor-pointer`}>
+           } lg:p-2 lg:px-5 2xl:p-3 2xl:px-6 cursor-pointer`}>
            {item.name}
           </li>
          </Link>
@@ -350,7 +351,7 @@ const Sidebar: React.FC = () => {
      )}
 
      <ul
-      className="hover:bg-primary hover:text-white py-3 px-4 font-medium"
+      className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium"
       onClick={() => toggleDropdown("item7")}>
       <div className="flex justify-between items-center">
        {PaymentMethod.name}
@@ -365,7 +366,7 @@ const Sidebar: React.FC = () => {
           <li
            className={`${
             pathname === item.path ? " bg-black/10 " : " hover:bg-white/60"
-           } p-3 px-6 cursor-pointer`}>
+           } lg:p-2 lg:px-5 2xl:p-3 2xl:px-6 cursor-pointer`}>
            {item.name}
           </li>
          </Link>
@@ -373,13 +374,13 @@ const Sidebar: React.FC = () => {
        ))}
       </ul>
      )}
-    </div>
-    <div className="flex flex-col gap-1">
-     <ul className="hover:bg-primary hover:text-white py-3 px-4 font-medium">
-      <Link href="/">
-       <li>Tutorials</li>
-      </Link>
-     </ul>
+     <div className="flex flex-col gap-1">
+      <ul className="hover:bg-primary hover:text-white lg:py-2 lg:px-3 2xl:py-3 2xl:px-4 font-medium">
+       <Link href="/">
+        <li>TUTORIALS</li>
+       </Link>
+      </ul>
+     </div>
     </div>
    </div>
 

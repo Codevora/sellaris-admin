@@ -19,6 +19,7 @@ export default {
     primary: "#357266",
     secondary: "#3A5E56",
     third: "#37413F",
+    red: "#d04444",
    },
   },
  },
