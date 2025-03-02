@@ -1,7 +1,6 @@
-
 import DateRangePicker from "@/components/DateRange";
 import ProductSalesChart from "../components/FinancialChart";
-
+import Profile from "@/components/Profile";
 
 const SalesSummary = {
  items: [
@@ -34,17 +33,10 @@ const SalesSummary = {
 
 const Home: React.FC = () => {
  return (
-  <div className="lg:ml-[240px] 2xl:ml-[270px] py-10 flex flex-col min-h-screen w-screen bg-[#f4f4f4]">
-   <div className="flex flex-col gap-3 px-4">
-    <h1 className="lg:text-xl 2xl:text-3xl font-bold text-primary">
-     Dashboard
-    </h1>
-    <div className="flex gap-5 w-[400px]">
-     <DateRangePicker/>
-    </div>
-    <hr className="w-full border-2" />
-   </div>
-
+  <div className="lg:ml-[240px] 2xl:ml-[270px] flex flex-col h-auto w-auto bg-[#f4f4f4]">
+   <h1 className="px-4 lg:text-2xl 2xl:text-3xl font-bold text-primary">
+    Dashboard
+   </h1>
    <div className="grid grid-cols-3">
     <div className=" p-4 rounded-lg w-full">
      <ProductSalesChart
@@ -91,7 +83,7 @@ const Home: React.FC = () => {
     <h1 className="lg:text-xl 2xl:text-3xl font-bold text-primary">
      Sales Summary
     </h1>
-    <ul className="grid grid-cols-3 gap-4 h-[220px]">
+    <ul className="grid grid-cols-3 gap-4 lg:h-[220px] 2xl:h-[300px]">
      {SalesSummary.items.map((item, index) => (
       <li
        key={index}

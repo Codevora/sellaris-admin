@@ -6,9 +6,9 @@ const DateRangePicker: React.FC = () => {
  const [selectedOutlet, setSelectedOutlet] = useState<string>("");
  const [startDate, setStartDate] = useState<string>("");
  const [endDate, setEndDate] = useState<string>("");
- const [isRange, setIsRange] = useState<boolean>(true); // To toggle between date range and single date
+ const [isRange, setIsRange] = useState<boolean>(true); 
 
- const outlets = ["Outlet 1", "Outlet 2", "Outlet 3"]; // Example outlets
+ const outlets = ["Outlet 1",]; 
 
  const handleOutletChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
   setSelectedOutlet(event.target.value);

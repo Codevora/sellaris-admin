@@ -46,7 +46,7 @@ const ProductSalesChart: React.FC<ProductSalesChartProps> = ({
  };
 
  return (
-  <div className="bg-white h-[250px] flex flex-col justify-center rounded-lg p-4 lg:size-sm">
+  <div className="bg-white lg:h-[250px] 2xl:h-auto flex flex-col justify-center rounded-lg p-4 lg:size-sm 2xl:size-lg">
    <h2 className="text-xl font-bold mb-4 text-gray-500/60">{title}</h2>
    <Bar data={data} />
   </div>
