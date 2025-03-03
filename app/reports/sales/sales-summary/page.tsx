@@ -1,4 +1,4 @@
-const SalesItem = [
+const SalesItems = [
  {
   title: "Gross Sales",
   value: "Rp.0,-",
@@ -13,7 +13,7 @@ const SalesItem = [
  },
 ];
 
-const NetSales = {
+const NetSale = {
  name: "Net Sales",
  items: [
   {
@@ -31,14 +31,14 @@ const NetSales = {
  ],
 };
 
-const Collected = [
+const TotalCollected = [
  {
   name:"Total Collected",
   value:"Rp.0,-",
  },
 ];
 
-const SalesGeneral: React.FC = () => {
+const SalesSummary: React.FC = () => {
  return (
   <div className="h-auto w-auto bg-[#f4f4f4]">
    <div className="flex flex-col gap-2">
@@ -47,7 +47,7 @@ const SalesGeneral: React.FC = () => {
     </h1>
     <div className="flex flex-col gap-2 w-[770px]">
      <ul className="w-full flex flex-col gap-3">
-      {SalesItem.map((item, index) => (
+      {SalesItems.map((item, index) => (
        <li
         key={index}
         className="flex flex-row justify-between">
@@ -58,7 +58,7 @@ const SalesGeneral: React.FC = () => {
      </ul>
      <div className="w-full border"></div>
      <ul className="w-full flex flex-col gap-3">
-      {NetSales.items.map((item, index) => (
+      {NetSale.items.map((item, index) => (
        <li
         key={index}
         className="flex flex-row justify-between">
@@ -69,7 +69,7 @@ const SalesGeneral: React.FC = () => {
      </ul>
      <div className="w-full border"></div>
      <ul className="w-full flex flex-col gap-3">
-      {Collected.map((item, index) => (
+      {TotalCollected.map((item, index) => (
        <li
         key={index}
         className="flex flex-row justify-between">
@@ -84,4 +84,4 @@ const SalesGeneral: React.FC = () => {
  );
 };
 
-export default SalesGeneral;
+export default SalesSummary;
