@@ -14,15 +14,15 @@ const SalesDropdown: React.FC = () => {
   items: [
    {
     name: "Sales Summary",
-    path: "/sales-summary",
+    path: "../",
    },
    {
     name: "Gross Profit",
     path: "/gross-profit",
    },
    {
-    name: "Payment Method",
-    path: "payment-method",
+    name: "Payment Methods",
+    path: "/payment-methods",
    },
    {
     name: "Sales Type",
@@ -73,6 +73,7 @@ const SalesDropdown: React.FC = () => {
     value={selectedDropdown}
     onChange={handleDropdown}
     className="p-2  w-[200px] border border-gray-300 shadow-sm bg-primary text-white">
+    
     {products.items.map((item, index) => (
      <option
       key={index}

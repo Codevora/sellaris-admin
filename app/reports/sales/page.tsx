@@ -15,6 +15,7 @@ const SalesItem = [
 
 const NetSales = {
  name: "Net Sales",
+ value: "Rp.0,-",
  items: [
   {
    name: "Gratuity",
@@ -50,19 +51,23 @@ const SalesGeneral: React.FC = () => {
       {SalesItem.map((item, index) => (
        <li
         key={index}
-        className="flex flex-row justify-between">
-        <h1 className="text-lg font-semibold">{item.title}</h1>
+        className="flex justify-between">
+        <h1 className="text-lg font-normal">{item.title}</h1>
         <p>{item.value}</p>
        </li>
       ))}
      </ul>
      <div className="w-full border"></div>
+     <div className="flex justify-between">
+      <h1 className="text-lg font-semibold">{NetSales.name}</h1>
+      <p>{NetSales.value}</p>
+     </div>
      <ul className="w-full flex flex-col gap-3">
       {NetSales.items.map((item, index) => (
        <li
         key={index}
-        className="flex flex-row justify-between">
-        <h1 className="text-lg font-semibold">{item.name}</h1>
+        className="flex  justify-between">
+        <h1 className="text-lg font-normal">{item.name}</h1>
         <p>{item.value}</p>
        </li>
       ))}
