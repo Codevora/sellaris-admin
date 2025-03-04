@@ -34,11 +34,11 @@ const Collected = [
 
 const GrossProfit: React.FC = () => {
  return (
-  <div className="flex flex-col gap-2 h-auto w-auto bg-[#f4f4f]">
+  <div className="flex flex-col gap-2 h-auto w-full bg-[#f4f4f]">
    <h1 className="lg:text-2xl 2xl:text-3xl font-bold text-black/20">
     Gross Profit
    </h1>
-   <div className="flex flex-col gap-2 w-[770px]">
+   <div className="flex flex-col gap-2 w-[770px] 2xl:w-full">
     <ul className="w-full flex flex-col gap-3">
      {SalesItem.map((item, index) => (
       <li
