@@ -14,7 +14,7 @@ const SalesDropdown: React.FC = () => {
   items: [
    {
     name: "Sales Summary",
-    path: "../",
+    path: "/reports/sales",
    },
    {
     name: "Gross Profit",
@@ -26,7 +26,7 @@ const SalesDropdown: React.FC = () => {
    },
    {
     name: "Sales Type",
-    path: "sales-type",
+    path: "/sales-type",
    },
    {
     name: "Brand Sales",

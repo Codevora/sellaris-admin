@@ -31,7 +31,7 @@ const SalesSummary = {
 
 const Home: React.FC = () => {
  return (
-  <div className="lg:ml-[240px] 2xl:ml-[270px] flex flex-col h-auto w-auto bg-[#f4f4f4]">
+  <div className="lg:ml-[240px] 2xl:ml-[270px] flex flex-col min-h-screen w-auto bg-[#f4f4f4]">
    <h1 className="px-4 lg:text-2xl 2xl:text-3xl font-bold text-primary">
     Dashboard
    </h1>

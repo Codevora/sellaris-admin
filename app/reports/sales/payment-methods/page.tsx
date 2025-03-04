@@ -8,7 +8,7 @@ const data = [
 ];
 
  return (
-  <div className="flex h-auto w-[700px] 2xl:w-full bg-[#f4f4f]">
+  <div className="flex h-auto w-full bg-[#f4f4f]">
    <Table data={data}/>
   </div>
  );

@@ -1,13 +1,12 @@
 const FailedContent = [
  {name: "TRANSACTIONS", value: 0},
  {name: "TOTAL COLLECTED", value: 0},
- {name: "NET SALES", value: 0},
 ];
 
-const Transaction: React.FC = () => {
+const TransactionFailed: React.FC = () => {
  return (
   <div className="flex h-auto w-full bg-[#f4f4f]">
-   <div className="flex justify-between items-center border w-full p-10 px-24 bg-white rounded-lg">
+   <div className="flex justify-between items-center border w-full p-10 px-[200px] bg-white">
     {FailedContent.map((item, index) => (
      <div
       key={index}
@@ -21,4 +20,4 @@ const Transaction: React.FC = () => {
  );
 };
 
-export default Transaction;
+export default TransactionFailed;
