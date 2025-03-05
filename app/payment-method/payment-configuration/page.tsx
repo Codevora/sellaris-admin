@@ -28,9 +28,8 @@ const PaymentConfiguration = () => {
     </div>
     <div className="grid grid-cols-2 w-full border bg-white">
      {PaymentTableContent.map((item, index) => (
-      <div className="w-full">
+      <div className="w-full" key={index}>
        <ul
-        key={index}
         className="w-full h-[200px] p-2  text-black">
         <h1>{item.description}</h1>
        </ul>

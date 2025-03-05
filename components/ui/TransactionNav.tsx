@@ -5,6 +5,7 @@ import {useState} from "react";
 import Link from "next/link";
 
 const TransactionNav: React.FC = () => {
+  const pathname = usePathname()
  const router = useRouter();
  const [selectedDropdown, setSelectedDropdown] = useState<string>("");
 
@@ -44,15 +45,14 @@ const TransactionNav: React.FC = () => {
       <div
        onClick={() => handleDropdown(event as any)}
        className="leading-tight">
-       <Link href={item.path}>
-        <button
-         className={` ${
-          selectedDropdown === item.name
-           ? " text-white border-primary"
-           : "hover:border-primary border-b-2 border-primary"
-         } py-2 transition-colors duration-300 ease-in-out `}>
-         {item.name}
-        </button>
+       <Link
+        href={item.path}
+        className={` ${
+         pathname === item.path
+          ? " border-primary border-b-2"
+          : "hover:border-primary hover:border-b-2  border-primary"
+        } py-2 transition-colors duration-300 ease-in-out`}>
+        {item.name}
        </Link>
       </div>
      </ul>
