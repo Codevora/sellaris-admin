@@ -41,7 +41,7 @@ export default function RootLayout({
    <body className="flex bg-[#f4f4f4]">
     <Sidebar />
     <div className=" bg-[#f4f4f]">
-     <div className="py-2 flex flex-col lg:ml-[240px] 2xl:ml-[270px] lg:w-[1020px] 2xl:w-[1650px]">
+     <div className="py-2 flex flex-col lg:ml-[240px] 2xl:ml-[270px] lg:w-[1020px] 2xl:w-[1630px]">
       <div className="flex flex-col gap-3 px-4">
        <div className="flex justify-between gap-5">
         {!disableDateRangePicker.includes(pathname) && <DateRangePicker />}
