@@ -27,7 +27,7 @@ const EmployeeCashier = [
  },
 ];
 
-const EmployeeAccess = () => {
+const EmployeeAccess:React.FC = () => {
  const [isPopupOpen, setIsPopupOpen] = useState(false);
  const [isFlyoutVisible, setIsFlyoutVisible] = useState(false);
  const [flyoutContent, setFlyoutContent] = useState("");
