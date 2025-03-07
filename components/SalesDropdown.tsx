@@ -9,12 +9,20 @@ const SalesDropdown: React.FC = () => {
  const router = useRouter();
 
  const [selectedDropdown, setSelectedDropdown] = useState<string>("");
+ 
+ const handleDropdown = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const selectedValue = event.target.value;
+  if (selectedValue) {
+   router.push(`sales/${selectedValue}`);
+  }
+  setSelectedDropdown(event.target.value);
+ };
 
  const products = {
   items: [
    {
     name: "Sales Summary",
-    path: "/reports/sales",
+    path: "../",
    },
    {
     name: "Gross Profit",
@@ -30,7 +38,7 @@ const SalesDropdown: React.FC = () => {
    },
    {
     name: "Brand Sales",
-    path: "brand-sales",
+    path: "/brand-sales",
    },
    {
     name: "Modifier Sales",
@@ -59,21 +67,12 @@ const SalesDropdown: React.FC = () => {
   ],
  };
 
- const handleDropdown = (event: React.ChangeEvent<HTMLSelectElement>) => {
-  const selectedValue = event.target.value;
-  if (selectedValue) {
-   router.push(`sales/${selectedValue}`);
-  }
-  setSelectedDropdown(event.target.value);
- };
-
  return (
   <div className="flex flex-col h-auto w-[200px]">
    <select
     value={selectedDropdown}
     onChange={handleDropdown}
     className="p-2  w-[200px] border border-gray-300 shadow-sm bg-primary text-white">
-    
     {products.items.map((item, index) => (
      <option
       key={index}
