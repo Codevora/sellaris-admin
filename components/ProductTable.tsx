@@ -1,7 +1,3 @@
-"use client";
-
-import React from "react";
-
 interface TableProps {
  data: Array<{
   id: number;
@@ -14,7 +10,7 @@ interface TableProps {
 
 const ProductTable: React.FC<TableProps> = ({data}) => {
  return (
-  <div className="overflow-y-auto h-[400px] 2xl:w-[1600px] w-[960px]">
+  <div className="overflow-y-auto h-[400px] w-full">
    <table className="w-full border-collapse border border-gray-200">
     <thead>
      <tr className="bg-gray-500 text-white border">

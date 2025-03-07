@@ -46,7 +46,7 @@ const ProductButton: React.FC<ProductButtonProps> = ({
  if (!isOpen) return null;
  return (
   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-   <div className="flex flex-col gap-2 bg-white p-6 overflow-y-auto rounded-lg shadow-lg h-full max-h-[880px] w-[900px]">
+   <div className="flex flex-col gap-2 bg-white p-6 overflow-y-auto rounded-lg shadow-lg h-full lg:max-h-[500px] max-h-[880px] w-[900px]">
     <p className="text-sm">Add Product</p>
     <hr className="border w-full" />
     <div className="flex flex-col justify-between h-full">
