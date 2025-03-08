@@ -7,7 +7,7 @@ import BundlingTable from "@/components/ui/BundlingTable";
 const data = [
  {
   name: "Bundling 1",
-  items: "Es Kopi Susu Moon 1L, Es ...",
+  items: "Product 1",
   pricing: "Sales Type",
   outlet: "Outlet 1",
   status: "Inactive",

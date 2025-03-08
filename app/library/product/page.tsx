@@ -48,7 +48,7 @@ const Product: React.FC = () => {
  ];
  
  return (
-  <div className=" flex flex-col gap-5 h-auto w-[960px] 2xl:w-full bg-[#f4f4f]">
+  <div className=" flex flex-col gap-5 h-auto w-full bg-[#f4f4f]">
    <div className="flex justify-between">
     <h1 className="lg:text-2xl 2xl:text-3xl font-bold text-primary">Product</h1>
     <div className="flex gap-2 justify-between items-center">
