@@ -10,10 +10,12 @@ const SalesTypePage: React.FC<SalesTypePageProps> = ({data}) => {
  return (
   <div className="overflow-y-auto h-[400px] w-full">
    <table className="w-full border-collapse border border-gray-200">
-    <thead className="bg-gray-400">
-     <th className="border border-gray-200 px-4 py-2">Name</th>
-     <th className="border border-gray-200 px-4 py-2">Gratuity Applied</th>
-     <th className="border border-gray-200 px-4 py-2">Status</th>
+    <thead>
+     <tr className="bg-gray-500 text-white border">
+      <th className="border border-gray-200 px-4 py-2">Name</th>
+      <th className="border border-gray-200 px-4 py-2">Gratuity Applied</th>
+      <th className="border border-gray-200 px-4 py-2">Status</th>
+     </tr>
     </thead>
 
     <tbody>

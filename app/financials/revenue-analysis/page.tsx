@@ -1,13 +1,14 @@
+import RevenueAnalysisUi from "@/components/ui/RevenueAnalysis";
+
 const RevenueAnalysis = () => {
  return (
-  <div className="flex flex-col h-auto w-auto bg-[#f4f4f]">
-   <div className="flex flex-col">
-    <div className="grid grid-cols-3 gap-5 w-full h-[250px] ">
-     <div className="border rounded-lg w-full bg-gray-500"></div>
-     <div className="border rounded-lg w-full bg-gray-500"></div>
-     <div className="border rounded-lg w-full bg-gray-500"></div>
-    </div>
+  <div className="flex flex-col gap-2 h-auto w-full bg-[#f4f4f]">
+   <div className="flex justify-between">
+    <h1 className="lg:text-2xl 2xl:text-3xl font-bold text-primary">
+     Revenue Analysis
+    </h1>
    </div>
+   <RevenueAnalysisUi />
   </div>
  );
 };
