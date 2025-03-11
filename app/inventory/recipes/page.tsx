@@ -1,7 +1,11 @@
+import ItemButton from "@/components/ui/ItemButton";
+
 const Recipes = () => {
  return (
-  <div className="lg:ml-[240px] 2xl:ml-[270px] p-5 flex flex-col h-auto w-auto bg-[#f4f4f]">
-   
+  <div className="flex flex-col gap-4 h-auto w-full bg-[#f4f4f]">
+   <div className="flex justify-between">
+    <ItemButton />
+   </div>
   </div>
  );
 };

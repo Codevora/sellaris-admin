@@ -3,16 +3,12 @@
 import React, {useState} from "react";
 
 const DateRangePicker: React.FC = () => {
- const [selectedOutlet, setSelectedOutlet] = useState<string>("");
+ 
  const [startDate, setStartDate] = useState<string>("");
  const [endDate, setEndDate] = useState<string>("");
  const [isRange, setIsRange] = useState<boolean>(true); 
 
- const outlets = ["Outlet 1",]; 
-
- const handleOutletChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-  setSelectedOutlet(event.target.value);
- };
+ 
 
  const handleStartDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   setStartDate(event.target.value);
@@ -38,24 +34,6 @@ const DateRangePicker: React.FC = () => {
 
  return (
   <div className="flex gap-5 justify-center">
-   <div className="flex flex-col gap-2">
-    <label className="block text-sm font-medium text-gray-700">
-     Pilih Outlet
-    </label>
-    <select
-     value={selectedOutlet}
-     onChange={handleOutletChange}
-     className="p-2 block w-[200px] border border-gray-300 shadow-sm">
-     {outlets.map((outlet, index) => (
-      <option
-       key={index}
-       value={outlet}>
-       {outlet}
-      </option>
-     ))}
-    </select>
-   </div>
-
    <div className="flex flex-col gap-2 justify-center">
     <div className="w-[250px] flex gap-2 items-center">
      <label className="flex text-sm font-medium text-gray-700">

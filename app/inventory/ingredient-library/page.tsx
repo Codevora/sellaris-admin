@@ -2,7 +2,22 @@ import IngLibTable from "@/components/ui/IngLibTable";
 import RawIngredientButton from "@/components/ui/RawIngredient";
 import SemiFinishedIngredientButton from "@/components/ui/SemiFinishedIngredient";
 
-const data = [{name: "Syrup", category: "Bahan Baku", stock: "2", unit: "gram(gr)", alert: "Low"}];
+const data = [
+ {
+  name: "Syrup",
+  category: "Bahan Baku",
+  stock: "2",
+  unit: "litre(ltr)",
+  alert: "Low",
+ },
+ {
+  name: "Rice",
+  category: "Bahan Baku",
+  stock: "1",
+  unit: "gram(gr)",
+  alert: "Low",
+ },
+];
 
 const IngredientLibrary = () => {
  return (
