@@ -5,15 +5,22 @@ import "./globals.css";
 
 //components
 import Sidebar from "@/components/Sidebar";
-import Outlet from  "@/components/Outlet"
+import Outlet from "@/components/Outlet";
 import Profile from "@/components/Profile";
 import DateRangePicker from "@/components/DateRange";
+
+const disableSidebar = ["/login"];
 
 const disableOutlet = [
  "/tutorials",
  "/payment-method/payment-configuration",
  "/inventory/recipes",
- "/inventory/recipes/semi-finished-ingredient"
+ "/inventory/recipes/semi-finished-ingredient",
+ "/inventory/suppliers",
+ "/library/promo",
+ "/library/discount",
+ "/library/bundle-package",
+ "/login",
 ];
 
 const disableDateRangePicker = [
@@ -21,18 +28,35 @@ const disableDateRangePicker = [
  "/payment-method/payment-configuration",
  "/inventory/recipes",
  "/inventory/recipes/semi-finished-ingredient",
+ "/inventory/suppliers",
+ "/library/promo",
+ "/library/discount",
+ "/library/bundle-package",
+ "/login",
 ];
+
 const disableProfile = [
  "/tutorials",
  "/payment-method/payment-configuration",
  "/inventory/recipes",
  "/inventory/recipes/semi-finished-ingredient",
+ "/inventory/suppliers",
+ "/library/promo",
+ "/library/discount",
+ "/library/bundle-package",
+ "/login",
 ];
+
 const disableHr = [
  "/tutorials",
  "/payment-method/payment-configuration",
  "/inventory/recipes",
  "/inventory/recipes/semi-finished-ingredient",
+ "/inventory/suppliers",
+ "/library/promo",
+ "/library/discount",
+ "/library/bundle-package",
+ "/login",
 ];
 
 export default function RootLayout({
@@ -59,15 +83,12 @@ export default function RootLayout({
     />
    </head>
    <body className="flex bg-[#f4f4f4]">
-    <Sidebar />
+    {!disableSidebar.includes(pathname) && <Sidebar />}
     <div className=" bg-[#f4f4f]">
      <div className="py-2 flex flex-col lg:ml-[240px] 2xl:ml-[270px] lg:w-[1020px] 2xl:w-[1630px]">
       <div className="flex flex-col gap-3 px-4">
        <div className="flex justify-between">
         <div className="flex gap-5">
-         <label className="block text-sm font-medium text-gray-700">
-          Pilih Outlet
-         </label>
          {!disableOutlet.includes(pathname) && <Outlet />}
          {!disableDateRangePicker.includes(pathname) && <DateRangePicker />}
         </div>

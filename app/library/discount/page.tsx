@@ -1,5 +1,6 @@
-;import DiscountTable from "@/components/ui/DiscountTable";
+import DiscountTable from "@/components/ui/DiscountTable";
 import DiscountButton from "@/components/ui/DiscountButton";
+import Outlet from "@/components/Outlet";
 
 const Discount: React.FC = () => {
  return (
@@ -10,6 +11,7 @@ const Discount: React.FC = () => {
     </h1>
     <DiscountButton />
    </div>
+   <Outlet/>
    <DiscountTable />
   </div>
  );

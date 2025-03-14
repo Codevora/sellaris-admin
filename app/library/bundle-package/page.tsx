@@ -3,6 +3,7 @@ import React, {useState} from "react";
 
 import BundlingButton from "@/components/ui/BundlingButton";
 import BundlingTable from "@/components/ui/BundlingTable";
+import Outlet from "@/components/Outlet";
 
 const data = [
  {
@@ -41,6 +42,7 @@ const BundlePackage: React.FC = () => {
      onClose={handleClosePopup}
     />
    </div>
+   <Outlet />
    <BundlingTable data={data} />
   </div>
  );
